@@ -14,25 +14,15 @@ server.listen(port, () => {
 });
 
 //Connessione del client
-io.on('connection', (socketClient) => { 
+io.on('connection', (socketClient) => {
     console.log('Client connesso');
 
     //Risposta del server
-    socketClient.emit('message',{message: "Ciao", sender: "Il Server"});
+    socketClient.emit('response', { message: "ciao", sender: "server" });
 
     //Quando dal client connesso inviero' una risposta
-    socketClient.on('ping', () => {
-        console.log('Ping from client!');
-
-        //Risposta
-        socketClient.emit('pong',{})
-
-        //Se sei avesse fatto in questo modo, il messaggio viene inoltrato a tutti i client
-        //  io.emit('pong', {});
+    socketClient.on('message', (msg) => {
+        //In questo modo, il messaggio viene inoltrato a tutti i client
+        io.emit('message', { userId: socketClient.id, message: msg.message });
     });
 });
-
-//Manda un messaggio al 'ping' del client ad intervalli di tempo 
-// setInterval(() => {
-//     io.emit('pong',{})
-// }, 1000);

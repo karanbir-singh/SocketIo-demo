@@ -1,37 +1,38 @@
-//Apriamo una connessione
+//Connessione
 const clientSocket = io();
 
-const btnPing = document.getElementById('btnPing');
+const btnSend = document.getElementById('btnSend');
+const inputMsg = document.getElementById('inputMsg');
 
 //Quando si verifica una connessione, esegui le istruzioni interne
 clientSocket.on('connect', (socket) => {
     console.log('Connesso');
 
-    btnPing.onclick = () => {
-        clientSocket.emit('ping', {});
-    };
+    btnSend.onclick = () => {
+        clientSocket.emit('message', { message: inputMsg.value });
+    }
 });
 
 //Risposta del server alla connessione del client
-clientSocket.on('message', (serverMsg) => {
-    console.log('Messaggio dal server ' + JSON.stringify(serverMsg, null, 2));
+clientSocket.on('response', (serverMsg) => {
+    //console.log('Messaggio dal server ' + JSON.stringify(serverMsg, null, 2));
 });
 
 //Risposta del server al ping
-clientSocket.on('pong', () => {
-    console.log('Pong from server');
+clientSocket.on('message', (msg) => {
+    document.getElementById('chatList').appendChild(createMassage(msg.userId, msg.message));
 });
 
 //Displays the massage
 function createMassage(userId, msg) {
     //Item
-    const listItem = document.createMassage("li");
-    listItem.class = "out";
+    const listItem = document.createElement("li");
+    listItem.className = "out";
 
     //Img utente
-    const userImgDiv = document.createMassage("div");
-    userImgDiv.class = "chat-img";
-    const userImg = document.createMassage("img");
+    const userImgDiv = document.createElement("div");
+    userImgDiv.className = "chat-img";
+    const userImg = document.createElement("img");
     userImg.alt = "Avtar";
     userImg.src = "https://bootdey.com/img/Content/avatar/avatar1.png";
 
@@ -39,11 +40,11 @@ function createMassage(userId, msg) {
 
     //Body
     const body = document.createElement("div");
-    body.class = "chat-body";
+    body.className = "chat-body";
 
     //Contenitore messaggio
     const messageDiv = document.createElement("div");
-    messageDiv.class = "chat-message";
+    messageDiv.className = "chat-message";
 
     //Utente
     const user = document.createElement("h5");
@@ -59,4 +60,7 @@ function createMassage(userId, msg) {
     body.appendChild(messageDiv);
 
     listItem.appendChild(body);
+
+    return listItem;
 }
+

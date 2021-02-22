@@ -5,6 +5,9 @@ body {
 .chat-list {
     padding: 0;
     font-size: .8rem;
+    overflow-y: auto;
+    height: 550px;
+    margin-bottom: 10px;
 }
 
 .chat-list li {
@@ -104,18 +107,10 @@ body {
     color: #ffffff;
 }
 
-.card-body {
-    overflow-y: auto;
-    height: 400px;
-    max-height: 600px;
-}
-
 .material-icons {
     vertical-align: middle;
 }
 
 .input-group {
-    position: absolute;
-    bottom: 0;
-    padding-right: 35px;
+    margin: 0;
 }

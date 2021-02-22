@@ -25,48 +25,37 @@
 
 <body>
 
-    <script src="app.js"></script>
+    <div class="card">
+        <div class="card-header">Chat</div>
+        <div class="card-body height3">
+            <ul id='chatList' class="chat-list">
 
-    <div class="row">
-        <div class="col-4"></div>
-
-        <div class="col-4">
-            <div class="card">
-                <div class="card-header">Chat</div>
-                <div class="card-body height3">
-                    <ul class="chat-list">
-
-                        <li class="out">
-                            <div class="chat-img">
-                                <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
-                            </div>
-                            <div class="chat-body">
-                                <div class="chat-message">
-                                    <h5>Jimmy Willams</h5>
-                                    <p>Raw denim heard of them tofu master cleanse</p>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                    <div class="input-group mb-3">
-                        <input id="inputMsg" type="text" class="form-control" placeholder="Write a message"
-                            aria-label="Write a message" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button id="btnSend" class="btn btn-success"><i
-                                    class="material-icons">send</i></button>
-
+                <li class="out">
+                    <div class="chat-img">
+                        <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <h5>Jimmy Willams</h5>
+                            <p>Raw denim heard of them tofu master cleanse</p>
                         </div>
                     </div>
+                </li>
 
+            </ul>
+
+            <div class="input-group mb-3">
+                <input id="inputMsg" type="text" class="form-control" placeholder="Write a message"
+                    aria-label="Write a message" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button id="btnSend" class="btn btn-success"><i class="material-icons">send</i></button>
                 </div>
             </div>
-        </div>
 
-        <div class="col-4"></div>
+        </div>
     </div>
 
+    <script src="app.js"></script>
 
     <!-- Separate Popper and Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
