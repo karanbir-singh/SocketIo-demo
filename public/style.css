@@ -1,6 +1,7 @@
-body{
-    background:#eee;    
+body {
+    background: #eee;
 }
+
 .chat-list {
     padding: 0;
     font-size: .8rem;
@@ -92,6 +93,7 @@ body{
     -moz-border-radius: 0.3rem 0.3rem 0 0;
     border-radius: 0.3rem 0.3rem 0 0;
 }
+
 .card .card-header {
     background: #17202b;
     border: 0;
@@ -102,6 +104,18 @@ body{
     color: #ffffff;
 }
 
-.content{
-    margin-top:40px;    
+.card-body {
+    overflow-y: auto;
+    height: 400px;
+    max-height: 600px;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.input-group {
+    position: absolute;
+    bottom: 0;
+    padding-right: 35px;
 }

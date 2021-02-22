@@ -16,71 +16,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-
     <!-- Local CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <button id="btnPing" type="button" class="btn btn-success">Ping the server</button>
+
     <script src="app.js"></script>
 
-    <div class="col-4">
-        <div class="card">
-            <div class="card-header">Chat</div>
-            <div class="card-body height3">
-                <ul class="chat-list">
-                    <li class="in">
-                        <div class="chat-img">
-                            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
-                        </div>
-                        <div class="chat-body">
-                            <div class="chat-message">
-                                <h5>Jimmy Willams</h5>
-                                <p>Raw denim heard of them tofu master cleanse</p>
-                            </div>
-                        </div>
-                    </li>
+    <div class="row">
+        <div class="col-4"></div>
 
-                    <li class="out">
-                        <div class="chat-img">
-                            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                        </div>
-                        <div class="chat-body">
-                            <div class="chat-message">
-                                <h5>Serena</h5>
-                                <p>Next level veard</p>
-                            </div>
-                        </div>
-                    </li>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">Chat</div>
+                <div class="card-body height3">
+                    <ul class="chat-list">
 
-                    <li class="in">
-                        <div class="chat-img">
-                            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
-                        </div>
-                        <div class="chat-body">
-                            <div class="chat-message">
-                                <h5 class="name">Jimmy Willams</h5>
-                                <p>Will stumptown scenes coffee viral.</p>
+                        <li class="out">
+                            <div class="chat-img">
+                                <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar1.png">
                             </div>
-                        </div>
-                    </li>
-
-                    <li class="out">
-                        <div class="chat-img">
-                            <img alt="Avtar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                        </div>
-                        <div class="chat-body">
-                            <div class="chat-message">
-                                <h5>Serena</h5>
-                                <p>Tofu master best deal</p>
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <h5>Jimmy Willams</h5>
+                                    <p>Raw denim heard of them tofu master cleanse</p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
 
+                    </ul>
+
+                    <div class="input-group mb-3">
+                        <input id="inputMsg" type="text" class="form-control" placeholder="Write a message"
+                            aria-label="Write a message" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button id="btnSend" class="btn btn-success"><i
+                                    class="material-icons">send</i></button>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
+        <div class="col-4"></div>
     </div>
 
 
