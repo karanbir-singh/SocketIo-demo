@@ -9,7 +9,11 @@ clientSocket.on('connect', (socket) => {
     console.log('Connesso');
 
     btnSend.onclick = () => {
-        clientSocket.emit('message', { message: inputMsg.value });
+        if (inputMsg.value !== null && inputMsg.value !== '') {
+            clientSocket.emit('message', { message: inputMsg.value });
+            inputMsg.value = null;
+        }
+        btnSend.blur();
     }
 });
 
