@@ -34,7 +34,7 @@ function createMassage(userId, msg) {
     userImgDiv.className = "chat-img";
     const userImg = document.createElement("img");
     userImg.alt = "Avtar";
-    userImg.src = "https://bootdey.com/img/Content/avatar/avatar1.png";
+    userImg.src = "https://www.bootdey.com/img/Content/avatar/avatar1.png";
 
     userImgDiv.appendChild(userImg);
 
@@ -59,6 +59,7 @@ function createMassage(userId, msg) {
 
     body.appendChild(messageDiv);
 
+    listItem.appendChild(userImgDiv);
     listItem.appendChild(body);
 
     return listItem;
